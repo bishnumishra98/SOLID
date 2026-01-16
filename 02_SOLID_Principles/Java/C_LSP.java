@@ -56,7 +56,7 @@ class Ostrich extends Bird {
 
 
 // Driver code
-public class D_LSP {
+public class C_LSP {
     public static void main(String[] args) {
         // LSP-compliant code: Ostrich is treated as Bird without issue
         Bird sparrow = new Sparrow();  // substituting Sparrow for Bird

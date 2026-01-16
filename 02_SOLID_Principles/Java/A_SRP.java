@@ -38,7 +38,7 @@ class InvoiceRepository {
 
 
 // driver code
-public class B_SRP {
+public class A_SRP {
     public static void main(String[] args) {
         // Create instances of the refactored classes
         InvoiceCalculator calculator = new InvoiceCalculator();

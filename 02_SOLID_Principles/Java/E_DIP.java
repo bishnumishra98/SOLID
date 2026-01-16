@@ -74,7 +74,7 @@ class Switch {
 
 
 // driver code
-public class F_DIP {
+public class E_DIP {
     public static void main(String[] args) {
         // Use switch with Lamp
         SwitchableDevice lamp = new Lamp();
