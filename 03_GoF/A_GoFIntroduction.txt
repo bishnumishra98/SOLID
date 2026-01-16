@@ -1,0 +1,150 @@
+✰ The Gang of Four (GoF) refers to four authors — Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides — who
+   wrote the influential book titled "Design Patterns: Elements of Reusable Object-Oriented Software" in 1994. This book
+   introduced 23 foundational design patterns that are widely used in software development, particularly in
+   Object-Oriented Design (OOD). These patterns provide proven solutions to recurring problems in software design,
+   making systems more maintainable, flexible, and reusable.
+   In Low-Level Design (LLD), the GoF patterns are important because they offer standardized approaches for solving
+   common software design issues like object creation, communication, and behavior in an object-oriented way.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+✰ Importance of GoF Patterns in Low-Level Design (LLD)
+   A. Reusability: These patterns encourage the reuse of tried-and-tested solutions, making code more reliable.
+   B. Maintainability: By using common design patterns, the code becomes easier to maintain and extend.
+   C. Standardization: GoF patterns provide a common vocabulary among developers. Using these patterns ensures that
+                       other developers will understand the design decisions more quickly.
+   D. Loose Coupling: Many of these patterns help reduce dependencies between components, making the system more modular and flexible.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+✰ Categories of GoF Design Patterns
+
+   The 23 GoF design patterns are classified into three main categories:
+
+   I.   Creational Patterns: Deal with object creation mechanisms, trying to create objects in a manner suitable to the situation.
+   II.  Structural Patterns: Focus on how objects and classes are composed to form larger structures, providing ways to organize
+                             relationships between entities.
+   III. Behavioral Patterns: Focus on communication between objects, describing how they interact and assign responsibilities.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+I. Creational Patterns: Creational patterns abstract the instantiation process, allowing for more flexible object creation. Its types are:
+
+    1. Factory Method: The Factory Method pattern defines an interface for creating objects, but lets subclasses decide which
+                       class to instantiate.
+        ▸ Problem: You want to delegate the creation of objects to subclasses to avoid direct instantiation.
+        ▸ Solution: Define a factory method in a superclass, which will be overridden in subclasses to create specific types of objects.
+
+    2. Abstract Factory: The Abstract Factory pattern provides an interface for creating families of related or dependent objects
+                        without specifying their concrete classes.
+        ▸ Problem: You need to create related objects without coupling your code to their concrete classes.
+        ▸ Solution: Create a factory that can produce families of related objects.
+
+    3. Singleton: The Singleton pattern ensures that a class has only one instance and provides a global point of access to it.
+        ▸ Problem: You want to restrict a class to only one instance.
+        ▸ Solution: Provide a static method that returns the same instance of the class every time.
+
+    4. Builder: The Builder pattern separates the construction of a complex object from its representation, allowing the same
+                construction process to create different representations.
+        ▸ Problem: You want to construct an object step-by-step with multiple configurations.
+        ▸ Solution: Use a builder to construct the object through a series of method calls.
+
+    5. Prototype: The Prototype pattern creates new objects by cloning an existing object (prototype), avoiding the need to
+                  create objects from scratch.
+        ▸ Problem: You need to create new objects based on an existing object.
+        ▸ Solution: Clone the prototype object to create new instances.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+II. Structural Patterns: Structural patterns deal with object composition or how classes and objects are organized into
+                         larger structures. Its types are:
+
+    1. Adapter: The Adapter pattern allows incompatible interfaces to work together by converting the interface of a class
+                into one the client expects.
+        ▸ Problem: You have incompatible interfaces that need to work together.
+        ▸ Solution: Create an adapter class that sits between the two interfaces.
+
+    2. Bridge: The Bridge pattern decouples an abstraction from its implementation, allowing the two to vary independently.
+        ▸ Problem: You want to vary both the implementation and abstraction independently.
+        ▸ Solution: Separate the abstraction from the implementation using a bridge.
+
+    3. Composite: The Composite pattern composes objects into tree structures to represent part-whole hierarchies,
+                  allowing individual objects and compositions to be treated uniformly.
+        ▸ Problem: You want to treat individual objects and groups of objects uniformly.
+        ▸ Solution: Use a composite structure that allows for both individual objects and groups of objects.
+
+    4. Decorator: The Decorator pattern allows behavior to be added to individual objects, dynamically, without
+                  modifying the behavior of other objects of the same class.
+        ▸ Problem: You need to extend the functionality of objects dynamically without affecting other instances.
+        ▸ Solution: Use a decorator to add new responsibilities to an object.
+
+    5. Facade: The Facade pattern provides a simplified interface to a complex system, making it easier to use.
+        ▸ Problem: You want to simplify a complex system for ease of use.
+        ▸ Solution: Create a facade that wraps the complex subsystem.
+
+    6. Flyweight: The Flyweight pattern reduces memory consumption by sharing as much data as possible with other similar objects.
+        ▸ Problem: You need to minimize memory usage by sharing objects.
+        ▸ Solution: Use a flyweight object that can be shared between different contexts.
+
+    7. Proxy: The Proxy pattern provides a placeholder or surrogate for another object to control access to it.
+        ▸ Problem: You need to control access to an object, perhaps for lazy initialization or access control.
+        ▸ Solution: Use a proxy that acts as a stand-in for the real object.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+III. Behavioral Patterns: Behavioral patterns focus on the communication and responsibility between objects. Its types are:
+
+    1.  Chain of Responsibility: The Chain of Responsibility pattern passes requests along a chain of handlers, allowing
+                                multiple objects to handle the request without knowing which one will handle it.
+        ▸ Problem: You want to pass a request through a series of handlers without specifying the handler explicitly.
+        ▸ Solution: Use a chain of handlers that can process the request in turn.
+
+    2.  Command: The Command pattern encapsulates a request as an object, allowing for parameterization of clients
+                with different requests, queuing of requests, and logging of requests.
+        ▸ Problem: You want to encapsulate requests as objects.
+        ▸ Solution: Create command objects that represent the actions to be executed.
+
+    3.  Interpreter: The Interpreter pattern defines a grammar for a language and provides an interpreter to interpret
+                    sentences in the language.
+        ▸ Problem: You need to interpret and evaluate sentences in a particular language.
+        ▸ Solution: Implement an interpreter that processes the language rules.
+    
+    4.  Iterator: The Iterator pattern provides a way to access the elements of a collection sequentially without exposing
+                 its underlying representation.
+        ▸ Problem: You need a way to traverse elements in a collection.
+        ▸ Solution: Use an iterator that abstracts the traversal logic.
+
+    5.  Mediator: The Mediator pattern defines an object that encapsulates how a set of objects interact, promoting loose
+                 coupling by preventing direct interaction between objects.
+        ▸ Problem: You need to reduce dependencies between communicating objects.
+        ▸ Solution: Use a mediator to handle communication between objects.
+
+    6.  Memento: The Memento pattern captures and restores an object's internal state without violating encapsulation.
+        ▸ Problem: You want to restore an object's state without exposing its internal structure.
+        ▸ Solution: Use a memento to store the object's state.
+
+    7.  Observer: The Observer pattern defines a one-to-many dependency between objects so that when one object changes
+                 state, all its dependents are notified and updated automatically.
+        ▸ Problem: You need to notify multiple objects when one object changes state.
+        ▸ Solution: Use an observer pattern to notify all dependent objects.
+
+    8.  State: The State pattern allows an object to change its behavior when its internal state changes, making the object
+              appear as if it has changed its class.
+        ▸ Problem: You want an object to change behavior based on its internal state.
+        ▸ Solution: Implement state objects that represent the different behaviors.
+
+    9.  Strategy: The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+                 It allows the algorithm to vary independently from the clients that use it.
+        ▸ Problem: You need to choose an algorithm dynamically.
+        ▸ Solution: Use a strategy pattern to encapsulate different algorithms.
+
+    10. Template Method: The Template Method pattern defines the skeleton of an algorithm in a method, deferring some steps
+                         to subclasses. It allows subclasses to redefine certain steps without changing the algorithm's structure.
+        ▸ Problem: You want to define a method's structure but allow subclasses to alter specific steps.
+        ▸ Solution: Use a template method that defines the steps, with some steps being implemented by subclasses.
+    
+    11. Visitor: The Visitor pattern allows adding new operations to a class hierarchy without modifying the classes.
+        ▸ Problem: You want to add new behaviors to a class hierarchy without changing the existing structure.
+        ▸ Solution: Use a visitor object that defines operations to be performed on the classes.
+
+-------------------------------------------------------------------------------------------------------------------------------

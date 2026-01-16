@@ -1,0 +1,14 @@
+The SOLID principles are a set of design principles in object-oriented programming that help in writing clean,
+maintainable, and scalable code, especially in Low-Level Design (LLD). These principles are important for designing
+robust systems and are widely used in software development to improve code quality and flexibility. These principles
+were introduced by Robert C. Martin, often known as "Uncle Bob." SOLID stands for:
+
+S: Single Responsibility Principle (SRP)
+O: Open/Closed Principle (OCP)
+L: Liskov Substitution Principle (LSP)
+I: Interface Segregation Principle (ISP)
+D: Dependency Inversion Principle (DIP)
+
+The SOLID principles help improve the design of software systems by making them more modular, flexible, and maintainable.
+Applying these principles results in cleaner code that is easier to extend, test, and debug, ultimately leading to more
+robust and scalable software designs.
