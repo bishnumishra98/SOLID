@@ -66,23 +66,18 @@ int main() {
     DiscountService discountService;
 
     Discount* christmasDiscount = new ChristmasDiscount();
-    double christmasDiscountedAmount =
-        discountService.applyDiscount(*christmasDiscount, 100.0);
-    cout << "Christmas Discounted Amount: "
-         << christmasDiscountedAmount << endl;
+    double christmasDiscountedAmount = discountService.applyDiscount(*christmasDiscount, 100.0);
+    cout << "Christmas Discounted Amount: " << christmasDiscountedAmount << endl;
 
     Discount* newYearDiscount = new NewYearDiscount();
-    double newYearDiscountedAmount =
-        discountService.applyDiscount(*newYearDiscount, 100.0);
-    cout << "New Year Discounted Amount: "
-         << newYearDiscountedAmount << endl;
+    double newYearDiscountedAmount = discountService.applyDiscount(*newYearDiscount, 100.0);
+    cout << "New Year Discounted Amount: " << newYearDiscountedAmount << endl;
 
     Discount* easterDiscount = new EasterDiscount();
-    double easterDiscountedAmount =
-        discountService.applyDiscount(*easterDiscount, 100.0);
-    cout << "Easter Discounted Amount: "
-         << easterDiscountedAmount << endl;
+    double easterDiscountedAmount = discountService.applyDiscount(*easterDiscount, 100.0);
+    cout << "Easter Discounted Amount: " << easterDiscountedAmount << endl;
 
+    // Clean up
     delete christmasDiscount;
     delete newYearDiscount;
     delete easterDiscount;
