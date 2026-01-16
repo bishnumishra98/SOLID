@@ -1,0 +1,5 @@
+There are three main types of variables you can define inside a class:
+
+1. Instance Variables (Non-static fields)
+2. Class Variables (static variables)
+3. Local Variables (Inside methods)

@@ -1,0 +1,20 @@
+There are four main pillars of Object-Oriented Programming (OOP):
+
+1. Encapsulation: Encapsulation is the concept of bundling the data (variables) and methods (functions) that operate
+                  on the data into a single unit, called a class. It restricts direct access to some of the object's
+                  components, which can help prevent the accidental modification of data. This is typically achieved
+                  using access modifiers such as private, protected, and public.
+
+2. Inheritance: Inheritance is the mechanism by which one class (child class) inherits the properties and behaviors
+                (fields and methods) of another class (parent class). It allows for code reusability and the creation
+                of a hierarchical relationship between classes.
+
+3. Polymorphism: Polymorphism allows methods to do different things based on the object it is acting upon. In Java,
+                 polymorphism is mainly achieved through method overloading (compile-time polymorphism) and method
+                 overriding (runtime polymorphism).
+
+4. Abstraction: Abstraction is the concept of hiding the complex implementation details and showing only the necessary
+                features of an object. This is typically achieved using abstract classes and interfaces in Java.
+
+These four pillars form the foundation of object-oriented programming in Java, enabling developers to create modular,
+reusable, and maintainable code.
