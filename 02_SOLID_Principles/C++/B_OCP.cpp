@@ -25,7 +25,7 @@ public:
 
 class Discount {   // Abstract base class
 public:
-    virtual ~Discount() = default;
+    virtual ~Discount() = default;   // virtual destructor for proper cleanup of derived classes
     virtual double calculate(double amount) const = 0;
 };
 
