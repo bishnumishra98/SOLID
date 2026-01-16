@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 // 5. Dependency Inversion Principle (DIP): High-level modules (like business logic) should not depend directly on
 //                                          low-level modules (like specific details of data access, logging, etc.).
 //                                          Both should depend on abstractions (like interfaces or abstract classes).
@@ -12,23 +15,26 @@
 // Violation of DIP
 // Low-level class
 class Lamp_ {
-    public void turnOn() {
-        System.out.println("Lamp_ is turned on.");
+public:
+    void turnOn() {
+        cout << "Lamp_ is turned on." << endl;
     }
-}
+};
 
 // High-level class
 class Switch_ {
-    private Lamp_ lamp;
+private:
+    Lamp_ lamp;
 
-    public Switch_() {
-        this.lamp = new Lamp_();   // directly depends on Lamp
+public:
+    Switch_() {
+        // directly depends on Lamp_
     }
 
-    public void operate() {
-        lamp.turnOn();   // can only control a Lamp
+    void operate() {
+        lamp.turnOn();   // can only control a Lamp_
     }
-}
+};
 
 // Problem: The Switch class is tightly coupled to the Lamp class. If you later want the switch to control a Fan instead,
 //          you would need to modify the Switch class. This makes it hard to extend the system.
@@ -36,54 +42,60 @@ class Switch_ {
 //           depend on. Now the Switch doesn't care whether it's controlling a Lamp, a Fan, or any other device — it just
 //           controls something that is "switchable."
 
+
 // Abstraction (interface)
-interface SwitchableDevice {
-    void turnOn();
-}
+class SwitchableDevice {
+public:
+    virtual ~SwitchableDevice() = default;
+    virtual void turnOn() = 0;
+};
 
 // Low-level class 1
-class Lamp implements SwitchableDevice {
-    @Override
-    public void turnOn() {
-        System.out.println("Lamp is turned on.");
+class Lamp : public SwitchableDevice {
+public:
+    void turnOn() override {
+        cout << "Lamp is turned on." << endl;
     }
-}
+};
 
 // Low-level class 2
-class Fan implements SwitchableDevice {
-    @Override
-    public void turnOn() {
-        System.out.println("Fan is turned on.");
+class Fan : public SwitchableDevice {
+public:
+    void turnOn() override {
+        cout << "Fan is turned on." << endl;
     }
-}
+};
 
 // High-level class now depends on abstraction (SwitchableDevice)
 class Switch {
-    private SwitchableDevice device;   // device is a SwitchableDevice type variable can hold a reference to
-                                      // any object that implements the SwitchableDevice interface
+private:
+    SwitchableDevice* device;   // device can point to any object that implements SwitchableDevice
 
+public:
     // ctor
-    public Switch(SwitchableDevice device) {
-        this.device = device;
+    Switch(SwitchableDevice* device) {
+        this->device = device;
     }
 
-    public void operate() {
-        device.turnOn();   // works with any device that implements SwitchableDevice
+    void operate() {
+        device->turnOn();   // works with any device that implements SwitchableDevice
     }
-}
-
+};
 
 // Driver code
-public class E_DIP {
-    public static void main(String[] args) {
-        // Use switch with Lamp
-        SwitchableDevice lamp = new Lamp();
-        Switch switch1 = new Switch(lamp);
-        switch1.operate();   // o/p: Lamp is turned on.
+int main() {
+    // Use switch with Lamp
+    SwitchableDevice* lamp = new Lamp();
+    Switch switch1(lamp);
+    switch1.operate();   // Lamp is turned on.
 
-        // Use switch with Fan
-        SwitchableDevice fan = new Fan();
-        Switch switch2 = new Switch(fan);
-        switch2.operate();   // o/p: Fan is turned on.
-    }
+    // Use switch with Fan
+    SwitchableDevice* fan = new Fan();
+    Switch switch2(fan);
+    switch2.operate();   // Fan is turned on.
+
+    delete lamp;
+    delete fan;
+
+    return 0;
 }

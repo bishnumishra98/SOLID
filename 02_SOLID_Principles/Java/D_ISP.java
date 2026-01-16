@@ -54,7 +54,7 @@ class Human implements Workable, Eatable {
 }
 
 
-// driver code
+// Driver code
 public class D_ISP {
     public static void main(String[] args) {
         // Create a Robot instance and call the work method

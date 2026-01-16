@@ -53,7 +53,7 @@ class DiscountService {
 }
 
 
-// driver code
+// Driver code
 public class B_OCP {
     public static void main(String[] args) {
         // Create DiscountService object
