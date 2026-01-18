@@ -67,15 +67,15 @@ int main() {
 
     Discount* christmasDiscount = new ChristmasDiscount();
     double christmasDiscountedAmount = discountService.applyDiscount(*christmasDiscount, 100.0);
-    cout << "Christmas Discounted Amount: " << christmasDiscountedAmount << endl;
+    cout << "Christmas Discounted Amount: " << christmasDiscountedAmount << endl;   // o/p: 10
 
     Discount* newYearDiscount = new NewYearDiscount();
     double newYearDiscountedAmount = discountService.applyDiscount(*newYearDiscount, 100.0);
-    cout << "New Year Discounted Amount: " << newYearDiscountedAmount << endl;
+    cout << "New Year Discounted Amount: " << newYearDiscountedAmount << endl;   // o/p: 15
 
     Discount* easterDiscount = new EasterDiscount();
     double easterDiscountedAmount = discountService.applyDiscount(*easterDiscount, 100.0);
-    cout << "Easter Discounted Amount: " << easterDiscountedAmount << endl;
+    cout << "Easter Discounted Amount: " << easterDiscountedAmount << endl;   // o/p: 20
 
     // Clean up
     delete christmasDiscount;
