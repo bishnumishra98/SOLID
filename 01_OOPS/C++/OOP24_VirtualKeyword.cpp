@@ -3,10 +3,10 @@
 // a function in a base class should be overridden in a derived class. The use of virtual is a key
 // feature to achieve runtime or dynamic polymorphism in C++. Here are the main uses of virtual:
 
-// 1. Virtual Functions: When you declare a member function in a base class as virtual, you indicate
-//                       that this function may be overridden in derived classes. This allows the
-//                       program to determine at runtime which version of the function to call
-//                       based on the actual type of the object. Example:
+// 1. Virtual Functions: When you declare a member function in a base class as virtual, it means
+//                       the function call will be resolved at runtime based actual object type
+//                       rather than the pointer or reference type, enabling runtime polymorphism.
+//                       Virtual functions may or may not be overridden in derived classes.
                          class Base {
                          public:
                             virtual void myFunction() {
